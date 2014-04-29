@@ -1,3 +1,10 @@
+//= require angular
+//= require angular_resource
+//= require shared
+//= require sign_up
+//= require helpful
+//= require_tree ./shared
+//= require_tree ./sign_up
 //= require jquery
 //= require jquery_ujs
 //= require jquery-textcomplete

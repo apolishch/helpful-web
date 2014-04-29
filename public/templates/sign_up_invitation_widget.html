@@ -1,0 +1,34 @@
+<div class="col-md-12" ng-if="invitation.invited">
+
+    <div class="form-group">
+        <label class="control-label">Teammate's Email Address</label>
+
+        <div class="row">
+
+            <div class="col-md-9">
+                <input type="text" class="form-control" ng-model='invitation.value' ng-disabled=true>
+            </div>
+
+            <div class="col-md-3">
+                <button class="btn btn-success btn-block" ng-disabled=true>
+                    Invited
+                    <span class="glyphicon glyphicon-ok"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="col-md-8 col-md-offset-2" ng-if="!invitation.invited">
+    <div class="row">
+
+        <div class="col-md-5">
+            <input type="text" ng-model='invitation.value' class="form-control" required>
+        </div>
+
+        <div class="col-md-3">
+            <button class="btn btn-secondary btn-block" ng-click="invite(invitation)" ng-disabled="{{!invitation.value}}">Invite</button>
+        </div>
+    </div>
+</div>

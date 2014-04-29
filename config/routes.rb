@@ -32,6 +32,10 @@ Helpful::Application.routes.draw do
     resources :mailgun, only: :create
   end
 
+  scope '/current_user' do
+    get '/' => 'current_user#index'
+  end
+
   post 'webhooks/chargify' => 'billings#webhook', :as => :webhook_billing
 
   namespace :api, format: 'json' do
@@ -74,6 +78,10 @@ Helpful::Application.routes.draw do
       get :list, on: :collection
 
       resources :tags, only: [:create]
+    end
+
+    resources :team_members, path: 'team_members', only: [:show, :update] do
+      get :invite
     end
 
     resources :messages, only: [:create]

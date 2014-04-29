@@ -33,8 +33,9 @@ class AccountsController < ApplicationController
       Analytics.track(
           user_id: @new_account_user.id,
           event: 'Signed Up')
-
-      redirect_to inbox_account_conversations_path(@account), notice: 'Welcome to Helpful!'
+      render 'invite'
+      #
+      #redirect_to inbox_account_conversations_path(@account), notice: 'Welcome to Helpful!'
     else
       render 'new'
     end
